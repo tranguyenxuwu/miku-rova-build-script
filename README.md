@@ -9,12 +9,11 @@ This project provides a ready-to-use bash script to automate the process of sync
 - [Build Methods](#-build-methods)
   - [Method 1: One-liner Command](#method-1-one-liner-command)
   - [Method 2: Using build.sh Script (Recommended)](#method-2-using-buildsh-script-recommended)
-- [Performance Tips](#-performance-tips)
 - [Credits](#-credits)
 
 ## 🔧 Requirements
 
-Before starting, ensure you have the following:
+Before starting, ensure you have:
 
 - **`crave`** AOSP account and CLI tool installed, or ssh tunnel to run these scripts
 
@@ -24,7 +23,7 @@ Choose one of the two methods below to build Miku UI for your Xiaomi Rova device
 
 ## 🛠️ Build Methods
 
-### Method 1: One-liner Command, if you are lazy to edit the script yourself
+### Method 1: One-liner Command
 
 Copy and paste the command below directly into your terminal:
 
@@ -41,24 +40,20 @@ make diva -j\$(nproc --all)"
 
 ### Method 2: Using build.sh Script (Recommended)
 
-Instead of the lengthy one-liner, use the provided bash script for better readability and maintainability.
+Use the provided bash script for better readability and maintainability.
 
-1. **Download and run the script:**
-
-   ```bash
-   crave run --no-patch -- "bash <(curl -fsSL https://raw.githubusercontent.com/tranguyenxuwu/miku-rova-build-script/main/build.sh)"
-   ```
+```bash
+crave run --no-patch -- "bash <(curl -fsSL https://raw.githubusercontent.com/tranguyenxuwu/miku-rova-build-script/main/build.sh)"
+```
 
 #### What the script does:
 
-- ✅ Initializes the repo with the Miku-UI Blooming branch
-- ✅ Adds the required local manifests for the Rova device
-- ✅ Syncs all sources via Crave
-- ✅ Applies the necessary patch for Pixel components
-- ✅ Sets up the build environment
-- ✅ Starts the build using `make diva`
-
-> **Note:** This will create a 32GB swap file. Adjust the size according to your needs and available disk space.
+- Initializes the repo with the Miku-UI Blooming branch
+- Adds the required local manifests for the Rova device
+- Syncs all sources via Crave
+- Applies the necessary patch for Pixel components
+- Sets up the build environment
+- Starts the build using `make diva`
 
 ## 🙏 Credits
 
