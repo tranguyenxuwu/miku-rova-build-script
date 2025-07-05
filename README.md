@@ -1,6 +1,6 @@
 # 🌸 Miku UI Build Script for Rova (Blooming Branch)
 
-This project provides a ready-to-use bash script to automate the process of syncing and building Miku UI for the **Xiaomi Rova** device.
+This project provides a ready-to-use bash script to automate the process of syncing and building Miku UI for the **Xiaomi (Rolex/Riva)** device.
 
 ## 📋 Table of Contents
 
@@ -16,13 +16,7 @@ This project provides a ready-to-use bash script to automate the process of sync
 
 Before starting, ensure you have the following:
 
-- **Linux build environment** (Ubuntu 20.04+ recommended)
-- **`crave`** CLI tool installed
-- **Android build dependencies**:
-  - Java Development Kit (JDK)
-  - `repo` tool
-  - `make` and build essentials
-- **`git-lfs`** (Git Large File Storage)
+- **`crave`** AOSP account and CLI tool installed, or ssh tunnel to run these scripts
 
 ## 🚀 Quick Start
 
@@ -30,7 +24,7 @@ Choose one of the two methods below to build Miku UI for your Xiaomi Rova device
 
 ## 🛠️ Build Methods
 
-### Method 1: One-liner Command
+### Method 1: One-liner Command, if you are lazy to edit the script yourself
 
 Copy and paste the command below directly into your terminal:
 
@@ -49,15 +43,10 @@ make diva -j\$(nproc --all)"
 
 Instead of the lengthy one-liner, use the provided bash script for better readability and maintainability.
 
-1. **Clone this repository and make the script executable:**
+1. **Download and run the script:**
 
    ```bash
-   chmod +x build.sh
-   ```
-
-2. **Run the script with crave:**
-   ```bash
-   crave run --no-patch -- "./build.sh"
+   crave run --no-patch -- "bash <(curl -fsSL https://raw.githubusercontent.com/tranguyenxuwu/miku-rova-build-script/main/build.sh)"
    ```
 
 #### What the script does:
@@ -68,7 +57,6 @@ Instead of the lengthy one-liner, use the provided bash script for better readab
 - ✅ Applies the necessary patch for Pixel components
 - ✅ Sets up the build environment
 - ✅ Starts the build using `make diva`
-
 
 > **Note:** This will create a 32GB swap file. Adjust the size according to your needs and available disk space.
 
