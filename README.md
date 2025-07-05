@@ -19,7 +19,9 @@ Before starting, ensure you have:
 
 ## 🚀 Quick Start
 
-Choose one of the two methods below to build Miku UI for your Xiaomi Rova device.
+```bash
+crave run --no-patch -- "bash <(curl -fsSL https://raw.githubusercontent.com/tranguyenxuwu/miku-rova-build-script/main/build.sh)"
+```
 
 ## 🛠️ Build Methods
 
